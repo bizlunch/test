@@ -8,10 +8,16 @@ class BizlunchAPI
 {
     private $lastResponse;
     private $requestArguments;
+    private $userToken;
 
     public function __construct()
     {
         $this->client = new Client();
+    }
+
+    public function setUserToken($value)
+    {
+        $this->userToken = $value;
     }
 
     public function addInputData($name, $value)

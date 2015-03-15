@@ -1,10 +1,15 @@
 default:
     autoload: [ %paths.base%/src/bizlunch/test/contexts ]
     suites:
-        default:
-            paths:    [ %paths.base%/src/bizlunch/test/features ]
-            filters:
+        auth:
+            paths:    [ %paths.base%/src/bizlunch/test/features\auth ]
             contexts:
                 - \bizlunch\test\contexts\APIFeatureContext
                 - \bizlunch\test\contexts\LoginFeatureContext
                 - \bizlunch\test\contexts\MiscFeatureContext
+        search:
+            paths:    [ %paths.base%/src/bizlunch/test/features/search ]
+            contexts:
+                - \bizlunch\test\contexts\APIFeatureContext
+                - \bizlunch\test\contexts\MiscFeatureContext
+                - \bizlunch\test\contexts\SearchFeatureContext

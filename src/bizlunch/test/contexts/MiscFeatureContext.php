@@ -12,6 +12,15 @@ class MiscFeatureContext extends BaseFeatureContext
      */
     public function iAmNotLoggedYet()
     {
-        $this->currentInputData = [];
+        $this->apiClient->setUserToken('');
     }
+
+    /**
+     * @Given I am logged
+     */
+    public function iAmLogged()
+    {
+        $this->apiClient->setUserToken('HyzwxyND5zCBbWskchtDuQAvYrAXTq01gJfl3GK/Yz6cpRPdBAcEO4fm/RCEjzTTaqAQ13oRsVyYJL2QNJ/RnA==');
+    }
+
 }
