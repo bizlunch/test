@@ -6,18 +6,40 @@ use GuzzleHttp\Client;
 
 class BizlunchAPI
 {
+    private $lastResponse;
+    private $requestArguments;
+
     public function __construct()
     {
         $this->client = new Client();
     }
 
+    public function addInputData($name, $value)
+    {
+        $this->requestArguments[$name] = $value;
+    }
+
+    public function getLastResponse()
+    {
+        return $this->lastResponse;
+    }
+
     public function post($uri, $data = [])
     {
-        $response = $this->client->post($this->buildURL($uri), [], $data);
+        if (!empty($this->requestArguments) && empty($data))
+        {
+            $data = $this->requestArguments;
+        }
+
+        $response = $this->client->post($this->buildURL($uri), [
+            'body' => $data
+        ]);
 
         //$status = $response->getStatusCode();
 
-        return $response->json();
+        $this->lastResponse = $response->json();
+
+        return $this->getLastResponse();
     }
 
     protected function buildURL($uri)
