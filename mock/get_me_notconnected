@@ -1,0 +1,22 @@
+HTTP/1.1 200 OK
+Cache-Control:no-store, no-cache, must-revalidate
+Connection:keep-alive
+Content-Length:186
+Content-Type:application/json; charset=UTF-8
+Date:Sun, 15 Mar 2015 18:54:37 GMT
+Expires:on, 01 Jan 1970 00:00:00 GMT
+Last-Modified:Sun, 15 Mar 2015 18:54:37 GMT
+Pragma:no-cache
+Server:nginx
+
+{
+   "status":500,
+   "data":{
+      "code":500,
+      "message":"User not logged in",
+      "error":"User not logged in",
+      "file":"src\/bizlunch\/api\/controllers\/APIBaseController.php",
+      "line":45
+   },
+   "duration":"2 ms"
+}

@@ -1,0 +1,1 @@
+FROM ebuildy/docker-nginx-php

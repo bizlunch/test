@@ -1,0 +1,22 @@
+{
+    "require": {
+        "symfony/yaml" : "dev-master",
+		"ebuildy/ebuildy" : "dev-master",
+		"keboola/php-encryption": "dev-master",
+        "rollbar/rollbar": "dev-master",
+        "facebook/php-sdk-v4" : "4.0.*",
+		"happyr/linkedin-api-client": "dev-master",
+		"zircote/swagger-php" : "dev-master",
+        "aws/aws-sdk-php": "2.7.*@dev",
+        "behat/behat": "3.0.*@dev"
+    },
+    "repositories": [
+
+    ],
+    "autoload": {
+        "psr-0": {
+            "bizlunch": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}

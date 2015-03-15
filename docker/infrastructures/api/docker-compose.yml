@@ -1,0 +1,15 @@
+web:
+  build: images/nginx+php
+  volumes:
+    - "~/www/bizlunch/api:/var/www:ro"
+  ports:
+    - "80:80"
+  links:
+    - "mongo:mongo"
+    - "elasticsearch:elasticsearch"
+
+mongo:
+  build: images/mongo
+
+elasticsearch:
+  build: images/elasticsearch
