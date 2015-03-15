@@ -1,14 +1,8 @@
 {
     "require": {
-        "symfony/yaml" : "dev-master",
-		"ebuildy/ebuildy" : "dev-master",
-		"keboola/php-encryption": "dev-master",
-        "rollbar/rollbar": "dev-master",
-        "facebook/php-sdk-v4" : "4.0.*",
-		"happyr/linkedin-api-client": "dev-master",
-		"zircote/swagger-php" : "dev-master",
-        "aws/aws-sdk-php": "2.7.*@dev",
-        "behat/behat": "3.0.*@dev"
+        "behat/behat": "3.0.*@dev",
+        "behat/mink": "1.7.*@dev",
+        "guzzlehttp/guzzle": "5.0.*@dev"
     },
     "repositories": [
 
@@ -18,5 +12,8 @@
             "bizlunch": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "config": {
+      "bin-dir": "bin/"
+    }
 }
