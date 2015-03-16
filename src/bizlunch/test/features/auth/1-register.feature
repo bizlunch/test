@@ -17,23 +17,6 @@ Scenario: Register with wrong email
   And I register
   Then I sould received the error "toto123@gmail n'est pas un email valide !"
 
-Scenario: Register a basic account
-  Given I am not logged yet
-  And basic register information
-  When I set "Thomas D." as "name"
-  And I set "basic@bizlunch.fr" as "email"
-  And I set "toto123" as "password"
-  And I register
-  Then I sould received a success status
-
-Scenario: Register an already taken email
-  Given I am not logged yet
-  And basic register information
-  When I set "Thomas D." as "name"
-  And I set "Basic@bizlunch.fr" as "email"
-  And I set "toto123" as "password"
-  And I register
-  Then I sould received the error "Cet email est déjà pris!"
 
 Scenario: Register Thomas
   Given I am not logged yet
@@ -64,3 +47,12 @@ Scenario: Register Géraldine
   And I set "Toulon" as "city"
   And I register
   Then I sould received a success status
+
+Scenario: Register an already taken email
+  Given I am not logged yet
+  And basic register information
+  When I set "Thomas D." as "name"
+  And I set "Thomas@bizlunch.fr" as "email"
+  And I set "toto123" as "password"
+  And I register
+  Then I sould received the error "Cet email est déjà pris!"

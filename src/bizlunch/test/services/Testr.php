@@ -13,11 +13,7 @@ class Testr
 
     protected function initMongoDB()
     {
-        shell_exec('export DOCKER_HOST=tcp://192.168.59.103:2376');
-        shell_exec('export DOCKER_CERT_PATH=/Users/tom/.boot2docker/certs/boot2docker-vm');
-        shell_exec('export DOCKER_TLS_VERIFY=1');
-
-        shell_exec('docker exec -ti api_mongo_1 mongo bizlunch --eval "db.dropDatabase()"');
+        shell_exec('export DOCKER_HOST=tcp://' . TEST_HOST . ':2376 && export DOCKER_CERT_PATH=/Users/tom/.boot2docker/certs/boot2docker-vm && export DOCKER_TLS_VERIFY=1 && docker exec -ti api_mongo_1 mongo bizlunch --eval "db.dropDatabase()"');
     }
 
     protected function initElasticSearch()

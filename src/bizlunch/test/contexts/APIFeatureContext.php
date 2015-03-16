@@ -53,4 +53,17 @@ class APIFeatureContext extends BaseFeatureContext
         }
     }
 
+    /**
+     * @Then I sould have :count items
+     */
+    public function iSouldRetrieve($count)
+    {
+        $apiResponse = $this->apiGetLastResponse();
+
+        if ((int) count($apiResponse['data']) !== (int) $count)
+        {
+            throw new \Exception('Actual count is ' . count($apiResponse['data']));
+        }
+    }
+
 }

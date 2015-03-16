@@ -2,7 +2,8 @@
     "require": {
         "behat/behat": "3.0.*@dev",
         "behat/mink": "1.7.*@dev",
-        "guzzlehttp/guzzle": "5.0.*@dev"
+        "guzzlehttp/guzzle": "5.0.*@dev",
+        "emuse/behat-html-formatter": "dev-master"
     },
     "repositories": [
 

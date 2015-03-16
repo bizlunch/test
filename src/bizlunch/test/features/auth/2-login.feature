@@ -15,12 +15,12 @@ Scenario: Login with a bad email
 
 Scenario: Login with a bad password
     Given I am not logged yet
-    When I login as "basic@bizlunch.fr" with password "sdflksjfkldjsfklsj"
+    When I login as "thomas@bizlunch.fr" with password "sdflksjfkldjsfklsj"
     Then I sould received the error "Mauvais mot de passe"
 
 Scenario: Login with a good email and password
     Given I am not logged yet
-    When I login as "basic@bizlunch.fr" with password "toto123"
+    When I login as "thomas@bizlunch.fr" with password "toto123"
     Then I sould received a success status
     When I call API service "/auth/me"
     Then I sould received a success status

@@ -14,10 +14,9 @@ default:
                 - \bizlunch\test\contexts\APIFeatureContext
                 - \bizlunch\test\contexts\MiscFeatureContext
                 - \bizlunch\test\contexts\InboxFeatureContext
-
-        search:
-            paths:    [ %paths.base%/src/bizlunch/test/features/search ]
-            contexts:
-                - \bizlunch\test\contexts\APIFeatureContext
-                - \bizlunch\test\contexts\MiscFeatureContext
                 - \bizlunch\test\contexts\SearchFeatureContext
+                - \bizlunch\test\contexts\InvitationFeatureContext
+
+    extensions:
+        emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+            name: html
