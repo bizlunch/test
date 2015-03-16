@@ -12,15 +12,36 @@ class MiscFeatureContext extends BaseFeatureContext
      */
     public function iAmNotLoggedYet()
     {
-        $this->apiClient->setUserToken('');
+        $this->apiAddInputData('access_token', '');
     }
 
     /**
-     * @Given I am logged
+     * @Given I login as :account
      */
-    public function iAmLogged()
+    public function iLoginAs($account)
     {
-        $this->apiClient->setUserToken('HyzwxyND5zCBbWskchtDuQAvYrAXTq01gJfl3GK/Yz6cpRPdBAcEO4fm/RCEjzTTaqAQ13oRsVyYJL2QNJ/RnA==');
+        if (!isset($this->shared->accounts[$account]))
+        {
+            throw new \Exception('Account not found!');
+        }
+
+        $this->apiAddInputData('access_token', $this->shared->accounts[$account]['session']['token']);
     }
 
+
+    /**
+     * @When I login as :login with password :password
+     */
+    public function loginWithPassword($login, $password)
+    {
+        $response = $this->shared->apiClient->post('/auth/login', [
+            'login'     => $login,
+            'password'  => $password
+        ]);
+
+        if (isset($response['data']['session']['token']))
+        {
+            $this->apiAddInputData('access_token', $response['data']['session']['token']);
+        }
+    }
 }

@@ -27,5 +27,9 @@ if ((!$loader = includeIfExists(__DIR__.'/../vendor/autoload.php')) && (!$loader
     exit(1);
 }
 
+define('TEST_HOST', '192.168.59.103');
+
+date_default_timezone_set('Europe/Paris');
+
 $factory = new \Behat\Behat\ApplicationFactory();
 $factory->createApplication()->run();

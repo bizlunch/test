@@ -19,7 +19,7 @@ class APIFeatureContext extends BaseFeatureContext
      */
     public function callApiService($service)
     {
-        $this->apiClient->post($service);
+        $this->shared->apiClient->post($service);
     }
 
     /**
@@ -28,11 +28,6 @@ class APIFeatureContext extends BaseFeatureContext
     public function iSouldReceivedTheError($error)
     {
         $apiResponse = $this->apiGetLastResponse();
-
-        if (empty($apiResponse))
-        {
-            throw new \Exception('The API response is empty!');
-        }
 
         if (!isset($apiResponse['data']['message']))
         {
@@ -44,4 +39,18 @@ class APIFeatureContext extends BaseFeatureContext
             throw new \Exception('Actual error message is "' . $apiResponse['data']['message'] . '"');
         }
     }
+
+    /**
+     * @Then I sould received a success status
+     */
+    public function iSouldReceivedASuccessStatus()
+    {
+        $apiResponse = $this->apiGetLastResponse();
+
+        if ((int) $apiResponse['status'] !== 200)
+        {
+            throw new \Exception('Actual status is "' . $apiResponse['status'] . '" (' . $apiResponse['data']['message'] . ')');
+        }
+    }
+
 }

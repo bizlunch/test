@@ -11,7 +11,7 @@ class SearchFeatureContext extends BaseFeatureContext
      */
     public function iSearchFor($keywords)
     {
-        $this->apiClient->post('/data/search', [
+        $this->shared->apiClient->post('/data/search', [
             'query' => $keywords
         ]);
     }

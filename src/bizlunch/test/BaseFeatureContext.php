@@ -12,7 +12,12 @@ use Foo\Bar\B;
  */
 class BaseFeatureContext implements Context, SnippetAcceptingContext
 {
-    static private $apiClientShared;
+    static private $__container;
+
+    /**
+     * @var \bizlunch\test\Container
+     */
+    public $shared;
 
     /**
      * Initializes context.
@@ -23,21 +28,30 @@ class BaseFeatureContext implements Context, SnippetAcceptingContext
      */
     public function __construct()
     {
-        if (empty(self::$apiClientShared))
+        if (empty(self::$__container))
         {
-            self::$apiClientShared = new BizlunchAPI();
+            self::$__container = new Container();
         }
 
-        $this->apiClient = self::$apiClientShared;
+        $this->shared = self::$__container;
+
+        $this->shared->apiClient->init();
     }
 
     public function apiAddInputData($name, $value)
     {
-        return $this->apiClient->addInputData($name, $value);
+        return $this->shared->apiClient->addInputData($name, $value);
     }
 
     public function apiGetLastResponse()
     {
-        return $this->apiClient->getLastResponse();
+        $r =  $this->shared->apiClient->getLastResponse();
+
+        if (empty($r))
+        {
+            throw new \Exception('The API response is empty!');
+        }
+
+        return $r;
     }
 }

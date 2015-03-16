@@ -3,26 +3,48 @@
 namespace bizlunch\test\services;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Message\Response;
 
 class BizlunchAPI
 {
+    /**
+     * @var Response
+     */
     private $lastResponse;
+
+    /**
+     * @var array
+     */
     private $requestArguments;
-    private $userToken;
+
+    /**
+     * @var Client
+     */
+    private $client;
 
     public function __construct()
     {
-        $this->client = new Client();
+        $this->init();
     }
 
-    public function setUserToken($value)
+    public function init()
     {
-        $this->userToken = $value;
+        $this->client = new Client(['base_url' => 'http://' . TEST_HOST . '/']);
+
+        $this->requestArguments = [];
+        $this->lastResponse = null;
     }
 
     public function addInputData($name, $value)
     {
         $this->requestArguments[$name] = $value;
+
+        return $this;
+    }
+
+    public function getInputData($name)
+    {
+        return isset($this->requestArguments[$name]) ? $this->requestArguments[$name] : null;
     }
 
     public function getLastResponse()
@@ -32,13 +54,11 @@ class BizlunchAPI
 
     public function post($uri, $data = [])
     {
-        if (!empty($this->requestArguments) && empty($data))
-        {
-            $data = $this->requestArguments;
-        }
+        $data = array_merge($data, $this->requestArguments);
 
-        $response = $this->client->post($this->buildURL($uri), [
-            'body' => $data
+        $response = $this->client->post($uri, [
+            'body'      => $data,
+            'cookies'   => false
         ]);
 
         //$status = $response->getStatusCode();
@@ -46,10 +66,5 @@ class BizlunchAPI
         $this->lastResponse = $response->json();
 
         return $this->getLastResponse();
-    }
-
-    protected function buildURL($uri)
-    {
-        return 'http://api.bizlunch.fr/' . $uri;
     }
 }
