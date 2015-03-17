@@ -54,21 +54,21 @@
             <div class="canvas-holder">
                 <canvas id="chart-features" width="300" height="300"/>
             </div>
-            0 features failed of 6
+            1 features failed of 7
             features
         </div>
         <div class="col-sm-4">
             <div class="canvas-holder">
                 <canvas id="chart-scenarios" width="300" height="300"/>
             </div>
-            0 scenarios failed of 23
+            1 scenarios failed of 25
             scenarios
         </div>
         <div class="col-sm-4">
             <div class="canvas-holder">
                 <canvas id="chart-steps" width="300" height="300"/>
             </div>
-            0 steps failed of 98
+            1 steps failed of 104
         </div>
     </div>
     <hr>
@@ -85,7 +85,7 @@
 
                     <div class="row">
                                                     <div class="col-sm-4 feature" data-id="feature-1">
-                                <div class="card passed">
+                                <div class="card failed">
                                     <div class="header">
                                         <h2>Feature: register</h2>
                                     </div>
@@ -100,11 +100,11 @@ I need to be able to create an account</p>
                                                                                     <div class="progress">
 
                                                 <div class="progress-bar progress-bar-green" role="progressbar"
-                                                     style="width: 100%">
+                                                     style="width: 83.333333333333%">
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
                                                 <div class="progress-bar progress-bar-red" role="progressbar"
-                                                     style="width: 0%">
+                                                     style="width: 16.666666666667%">
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
                                             </div>
@@ -177,7 +177,7 @@ I need to be able to send and receive messages</p>
                                                     <div class="col-sm-4 feature" data-id="feature-4">
                                 <div class="card passed">
                                     <div class="header">
-                                        <h2>Feature: search</h2>
+                                        <h2>Feature: invitation</h2>
                                     </div>
                                     <div class="info">
                                         <p>In order to meet people<br />
@@ -204,6 +204,22 @@ I need to be able to invite them first</p>
                                                     <div class="col-sm-4 feature" data-id="feature-5">
                                 <div class="card passed">
                                     <div class="header">
+                                        <h2>Feature: invitation</h2>
+                                    </div>
+                                    <div class="info">
+                                        <p>In order to meet people<br />
+As a Bizlunch user<br />
+I need to be able to invite them first</p>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="tags">
+                                                                                    </div>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <div class="col-sm-4 feature" data-id="feature-6">
+                                <div class="card passed">
+                                    <div class="header">
                                         <h2>Feature: search</h2>
                                     </div>
                                     <div class="info">
@@ -228,7 +244,7 @@ I need to be able to search them first</p>
                                                                             </div>
                                 </div>
                             </div>
-                                                    <div class="col-sm-4 feature" data-id="feature-6">
+                                                    <div class="col-sm-4 feature" data-id="feature-7">
                                 <div class="card passed">
                                     <div class="header">
                                         <h2>Feature: suggest</h2>
@@ -263,7 +279,7 @@ I need to be able to get in touch with them first</p>
     <div id="scenario-overview" class="row">
                                     <div class="feature" data-id="feature-1">
                     <div class="col-sm-4">
-                        <div class="card passed">
+                        <div class="card failed">
                             <div class="header">
                                 <h2>Feature: register</h2>
                             </div>
@@ -278,11 +294,11 @@ I need to be able to create an account</p>
                                                                     <div class="progress">
 
                                         <div class="progress-bar progress-bar-green" role="progressbar"
-                                             style="width: 100%">
+                                             style="width: 83.333333333333%">
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                         <div class="progress-bar progress-bar-red" role="progressbar"
-                                             style="width: 0%">
+                                             style="width: 16.666666666667%">
                                             <span class="sr-only">40% Complete (success)</span>
                                         </div>
                                     </div>
@@ -362,7 +378,7 @@ I need to be able to create an account</p>
                                                                                                                                                                                                                 </ul>
                                 </div>
                             </div>
-                                                    <div class="panel panel-default passed">
+                                                    <div class="panel panel-default failed">
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
@@ -398,10 +414,12 @@ I need to be able to create an account</p>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-success">
                                                 <b>And</b> I set &quot;Toulon&quot; as &quot;city&quot;
                                                                                             </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-danger">
                                                 <b>And</b> I register
-                                                                                            </li>
-                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                                                                    <br>
+                                                <p style="padding-left:2em ; color:gray">(Server error response [url] http://192.168.59.103/auth/register [status code] 500 [reason phrase] Internal Server Error)</p>
+                                                                                        </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-info">
                                                 <b>Then</b> I sould received a success status
                                                                                             </li>
                                                                                                                                                                                                                 </ul>
@@ -949,7 +967,7 @@ I need to be able to send and receive messages</p>
                     <div class="col-sm-4">
                         <div class="card passed">
                             <div class="header">
-                                <h2>Feature: search</h2>
+                                <h2>Feature: invitation</h2>
                             </div>
                             <div class="info">
                                 <p>In order to meet people<br />
@@ -1007,6 +1025,9 @@ I need to be able to invite them first</p>
                                                                                                                                                                                                                         <li class="list-group-item alert alert-success">
                                                 <b>Then</b> I invite &quot;sandy&quot;
                                                                                             </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>And</b> I invite &quot;geraldine&quot;
+                                                                                            </li>
                                                                                                                                                                                                                 </ul>
                                 </div>
                             </div>
@@ -1040,9 +1061,89 @@ I need to be able to invite them first</p>
                                                                                                                                                                                                                 </ul>
                                 </div>
                             </div>
+                                                    <div class="panel panel-default passed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-4-3"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-4-3">
+                                            Scenario: Sandy accepts invitation
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                    </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-4-3" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-success">
+                                                <b>Given</b> I login as &quot;sandy&quot;
+                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>When</b> I accept invitation from &quot;thomas&quot;
+                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>Then</b> I sould received a success status
+                                                                                            </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
+                                                    <div class="panel panel-default passed">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#scenario-4-4"
+                                           aria-expanded="true"
+                                           aria-controls="scenario-4-4">
+                                            Scenario: Géraldine decilnes invitation
+                                        </a>
+
+                                        <div class="tags pull-right">
+                                                                                    </div>
+                                    </h4>
+                                </div>
+                                <div id="scenario-4-4" class="panel-collapse collapse in"
+                                     role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <ul class="list-group">
+                                                                                    <li class="list-group-item alert alert-success">
+                                                <b>Given</b> I login as &quot;geraldine&quot;
+                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>When</b> I decline invitation from &quot;thomas&quot;
+                                                                                            </li>
+                                                                                                                                                                                                                        <li class="list-group-item alert alert-success">
+                                                <b>Then</b> I sould received a success status
+                                                                                            </li>
+                                                                                                                                                                                                                </ul>
+                                </div>
+                            </div>
                                             </div>
                 </div>
                             <div class="feature" data-id="feature-5">
+                    <div class="col-sm-4">
+                        <div class="card passed">
+                            <div class="header">
+                                <h2>Feature: invitation</h2>
+                            </div>
+                            <div class="info">
+                                <p>In order to meet people<br />
+As a Bizlunch user<br />
+I need to be able to invite them first</p>
+                            </div>
+                            <div class="footer">
+                                <div class="tags">
+                                                                    </div>
+                                                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 details panel-group" role="tablist" aria-multiselectable="true">
+                                            </div>
+                </div>
+                            <div class="feature" data-id="feature-6">
                     <div class="col-sm-4">
                         <div class="card passed">
                             <div class="header">
@@ -1075,9 +1176,9 @@ I need to be able to search them first</p>
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
-                                           href="#scenario-5-1"
+                                           href="#scenario-6-1"
                                            aria-expanded="true"
-                                           aria-controls="scenario-5-1">
+                                           aria-controls="scenario-6-1">
                                             Scenario: Search a ghost
                                         </a>
 
@@ -1085,7 +1186,7 @@ I need to be able to search them first</p>
                                                                                     </div>
                                     </h4>
                                 </div>
-                                <div id="scenario-5-1" class="panel-collapse collapse in"
+                                <div id="scenario-6-1" class="panel-collapse collapse in"
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
@@ -1105,9 +1206,9 @@ I need to be able to search them first</p>
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
-                                           href="#scenario-5-2"
+                                           href="#scenario-6-2"
                                            aria-expanded="true"
-                                           aria-controls="scenario-5-2">
+                                           aria-controls="scenario-6-2">
                                             Scenario: Search Sandy
                                         </a>
 
@@ -1115,7 +1216,7 @@ I need to be able to search them first</p>
                                                                                     </div>
                                     </h4>
                                 </div>
-                                <div id="scenario-5-2" class="panel-collapse collapse in"
+                                <div id="scenario-6-2" class="panel-collapse collapse in"
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
@@ -1135,9 +1236,9 @@ I need to be able to search them first</p>
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
-                                           href="#scenario-5-3"
+                                           href="#scenario-6-3"
                                            aria-expanded="true"
-                                           aria-controls="scenario-5-3">
+                                           aria-controls="scenario-6-3">
                                             Scenario: Search a city
                                         </a>
 
@@ -1145,7 +1246,7 @@ I need to be able to search them first</p>
                                                                                     </div>
                                     </h4>
                                 </div>
-                                <div id="scenario-5-3" class="panel-collapse collapse in"
+                                <div id="scenario-6-3" class="panel-collapse collapse in"
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
@@ -1163,7 +1264,7 @@ I need to be able to search them first</p>
                             </div>
                                             </div>
                 </div>
-                            <div class="feature" data-id="feature-6">
+                            <div class="feature" data-id="feature-7">
                     <div class="col-sm-4">
                         <div class="card passed">
                             <div class="header">
@@ -1196,9 +1297,9 @@ I need to be able to get in touch with them first</p>
                                 <div class="panel-heading" role="tab">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion"
-                                           href="#scenario-6-1"
+                                           href="#scenario-7-1"
                                            aria-expanded="true"
-                                           aria-controls="scenario-6-1">
+                                           aria-controls="scenario-7-1">
                                             Scenario: Give me suggestion
                                         </a>
 
@@ -1206,7 +1307,7 @@ I need to be able to get in touch with them first</p>
                                                                                     </div>
                                     </h4>
                                 </div>
-                                <div id="scenario-6-1" class="panel-collapse collapse in"
+                                <div id="scenario-7-1" class="panel-collapse collapse in"
                                      role="tabpanel"
                                      aria-labelledby="headingOne">
                                     <ul class="list-group">
@@ -1235,7 +1336,7 @@ I need to be able to get in touch with them first</p>
 <script type="text/javascript">
     var featureData = [
         {
-            value: 0,
+            value: 1,
             color: "#F7464A",
             highlight: "#FF5A5E",
             label: "Failed"
@@ -1250,13 +1351,13 @@ I need to be able to get in touch with them first</p>
 
     var scenarioData = [
         {
-            value: 0,
+            value: 1,
             color: "#F7464A",
             highlight: "#FF5A5E",
             label: "Failed"
         },
         {
-            value: 23,
+            value: 24,
             color: "#00a65a",
             highlight: "#5AD3D1",
             label: "Passed"
@@ -1265,13 +1366,13 @@ I need to be able to get in touch with them first</p>
 
     var stepData = [
         {
-            value: 0,
+            value: 1,
             color: "#F7464A",
             highlight: "#FF5A5E",
             label: "Failed"
         },
         {
-            value: 98,
+            value: 103,
             color: "#00a65a",
             highlight: "#5AD3D1",
             label: "Passed"

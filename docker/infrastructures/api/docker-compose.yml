@@ -8,6 +8,14 @@ web:
     - "mongo:mongo"
     - "elasticsearch:elasticsearch"
 
+worker:
+  build: docker/images/worker
+  volumes:
+    - "~/www/bizlunch/api:/var/www:ro"
+  links:
+    - "mongo:mongo"
+    - "elasticsearch:elasticsearch"
+
 mongo:
   build: images/mongo
   ports:

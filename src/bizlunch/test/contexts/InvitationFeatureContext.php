@@ -41,4 +41,26 @@ class InvitationFeatureContext extends BaseFeatureContext
             throw new \Exception('Actual author is ' . $i[0]['author']);
         }
     }
+
+    /**
+     * @When I :action invitation from :author
+     */
+    public function actionFrom($author, $action)
+    {
+        $r = $this->shared->apiClient->post('/bizlunch/list');
+
+        foreach($r['data']['invitations'] as $i)
+        {
+            if ($i['author'] === $this->shared->accounts[$author]['account']['_id'])
+            {
+                $this->shared->apiClient->post('/bizlunch/' . $action, [
+                    'invitation' => $i['id']
+                ]);
+
+                return true;
+            }
+        }
+
+        throw new \Exception('There is no inviation from ' . $author);
+    }
 }
