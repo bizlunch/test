@@ -1,0 +1,8 @@
+chrome:
+  build: selenium/standalone-chrome:latest
+  ports:
+    - "4444:4444"
+firefox:
+  build: selenium/standalone-firefox:latest
+  ports:
+    - "4445:4444"
