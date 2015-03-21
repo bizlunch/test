@@ -1,8 +1,7 @@
 <?php
-namespace bizlunch\test\contexts;
+namespace bizlunch\test\contexts\api;
 
-
-use bizlunch\test\BaseFeatureContext;
+namespace bizlunch\test\api\contexts;
 
 class InvitationFeatureContext extends BaseFeatureContext
 {

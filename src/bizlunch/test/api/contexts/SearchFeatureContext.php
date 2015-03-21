@@ -1,8 +1,6 @@
 <?php
 
-namespace bizlunch\test\contexts;
-
-use bizlunch\test\BaseFeatureContext;
+namespace bizlunch\test\api\contexts;
 
 class SearchFeatureContext extends BaseFeatureContext
 {

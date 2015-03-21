@@ -1,6 +1,6 @@
 <?php
 
-namespace bizlunch\test\services;
+namespace bizlunch\test\api\services;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Message\Response;

@@ -1,11 +1,11 @@
 <?php
 
-namespace bizlunch\test;
+namespace bizlunch\test\api\contexts;
 
 use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
+use bizlunch\test\Container;
 use bizlunch\test\services\BizlunchAPI;
-use Foo\Bar\B;
 
 /**
  * Defines application features from the specific context.

@@ -1,18 +1,15 @@
 <?php
 
-namespace bizlunch\test;
+namespace bizlunch\test\api;
 
-
-use bizlunch\test\services\BizlunchAPI;
-use bizlunch\test\services\Testr;
+use bizlunch\test\api\services\BizlunchAPI;
 
 class Container
 {
     /**
-     * @var \bizlunch\test\services\BizlunchAPI
+     * @var \bizlunch\test\api\services\BizlunchAPI
      */
     public $apiClient;
-
 
     /**
      * @var array
@@ -23,6 +20,6 @@ class Container
     {
         $this->apiClient = new BizlunchAPI();
 
-        (new Testr())->init();
+        //(new Testr())->init();
     }
 }

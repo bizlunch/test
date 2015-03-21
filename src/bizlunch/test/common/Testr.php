@@ -1,6 +1,6 @@
 <?php
 
-namespace bizlunch\test\services;
+namespace bizlunch\test\common;
 
 
 class Testr

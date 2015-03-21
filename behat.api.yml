@@ -1,0 +1,22 @@
+default:
+    autoload: [ %paths.base%/src/bizlunch/test/contexts ]
+    suites:
+        auth:
+            paths:    [ %paths.base%/src/bizlunch/test/features/auth ]
+            contexts:
+                - \bizlunch\test\contexts\api\APIFeatureContext
+                - \bizlunch\test\contexts\api\LoginFeatureContext
+                - \bizlunch\test\contexts\api\MiscFeatureContext
+
+        business:
+            paths:    [ %paths.base%/src/bizlunch/test/features/business ]
+            contexts:
+                - \bizlunch\test\contexts\api\APIFeatureContext
+                - \bizlunch\test\contexts\api\MiscFeatureContext
+                - \bizlunch\test\contexts\api\InboxFeatureContext
+                - \bizlunch\test\contexts\api\SearchFeatureContext
+                - \bizlunch\test\contexts\api\InvitationFeatureContext
+
+    extensions:
+        emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+            name: html
